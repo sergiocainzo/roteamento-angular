@@ -8,6 +8,11 @@ export const routes: Routes = [
   { path: '', redirectTo: 'primeira-pagina', pathMatch: 'full' },
   { path: 'primeira-pagina', component: PrimeiraPagina },
   { path: 'segunda-pagina', component: SegundaPagina },
-  { path: 'pagina-com-parametros/:id', component: PaginaComParametros},
+  { path: 'pagina-com-parametros/:id', component: PaginaComParametros },
+  {
+    path: 'lazy-loading',
+    loadComponent: () =>
+      import('./lazy-loading/lazy-loading').then((m) => m.LazyLoading),
+  },
   { path: '**', component: PaginaNaoEncontrada },
 ];

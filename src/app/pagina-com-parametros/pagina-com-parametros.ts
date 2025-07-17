@@ -21,7 +21,6 @@ export class PaginaComParametros implements OnInit {
     });
     this.route.queryParamMap.subscribe(params => {
       this.idade = Number(params.get("idade"));
-      this.idade = Number(params.get("idade"));
       this.nome = params.get("nome");
     })
   }
